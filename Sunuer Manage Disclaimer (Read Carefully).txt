@@ -1,0 +1,49 @@
+Sunuer Manage Usage Disclaimer
+
+Important Notice:
+    Before using the Sunuer Manage platform, developed by the Sunuer technical team and its contributors (hereinafter referred to as "the team"), please read this statement carefully and fully understand its contents. If you choose to use Sunuer Manage, it will be considered that you have thoroughly read, understood, and accepted all the terms of this statement. If you disagree with any part of this statement, you must immediately stop using Sunuer Manage.
+1. Product Description
+        Sunuer Manage is a free, open-source management platform designed to help users efficiently develop management platforms.
+2. Commitment to Use and Responsibility
+    Commitment to Legal Use
+         You commit to using Sunuer Manage in a legal and reasonable manner, and not to use this tool for any illegal activities or to infringe on the legal rights of others. You should not use Sunuer Manage for any web platform or project that violates laws or regulations.
+    Risk of Use
+         When using Sunuer Manage, you assume all risks associated with using the tool, including but not limited to issues arising from code generation that may not suit specific business requirements, data breaches, or system failures. The team is not responsible for any direct, indirect, incidental, or consequential losses arising from these issues.
+    Consequences of Misconduct
+         You must not use Sunuer Manage for the following actions:
+             Spreading malware or viruses;
+             Executing any unauthorized data scraping or data manipulation operations;
+             Using the tool for activities that harm the legal rights of others;
+             Any other actions that violate laws or regulations.
+             If you violate the above terms, you will bear all legal responsibilities, including but not limited to civil compensation, criminal responsibility, etc.
+3. Privacy Protection
+     User Data Protection
+        The team is committed to respecting and protecting users' personal privacy. We will not steal your personal information.
+4. Intellectual Property Statement
+    Ownership of Intellectual Property
+         The team holds full intellectual property rights to Sunuer Manage and all related technologies, codes, logos, interface designs, etc. (including but not limited to trademark rights, patent rights, copyrights, etc.). No entity or individual may apply for intellectual property rights related to Sunuer Manage without written authorization from the team.
+    Trademark and Patent Protection
+         Sunuer and its logo are registered as trademarks in relevant countries and regions. Unauthorized use will constitute an infringement. The team has the right to pursue legal responsibility for any infringement.
+5. Open Source Component Usage Statement
+    Layui and Other Open Source Codes
+         Sunuer Manage uses open-source components like Layui for frontend development, and these open-source components are subject to their respective open-source licenses (such as the MIT License, GPL, etc.). When using these open-source components, you must comply with the relevant open-source licensing agreements.
+         This tool has not modified any open-source components. All copyrights for the open-source components belong to their original authors. When using them, you must follow the original licensing agreements.
+    Responsibility for Open Source Code
+         The team assumes no responsibility for third-party open-source code. If you encounter any issues using these open-source components, you should seek help from the respective open-source community or developers.
+6. Disclaimer
+    Product Function Risks
+         The team strives to ensure the full functionality of Sunuer Manage, but does not guarantee its applicability to all development scenarios. Due to improper use of the management platform or specific environmental factors, errors may occur or certain requirements may not be met, and the team is not responsible for any resulting losses.
+    Exemption of Legal Responsibility
+         The team is not responsible for any damages caused to the user due to the use of Sunuer Manage, including but not limited to damages caused by software defects, operational errors, data loss, legal disputes, etc. The user assumes all consequences arising from the use of this management platform.
+    Exemption of Responsibility for Open-Source Components
+         The team does not guarantee the functionality, compatibility, performance, etc., of the open-source components used in Sunuer Manage, and does not assume any responsibility for losses caused by the use of these components.
+7. Secondary Development Statement
+         If you perform secondary development on the Sunuer Manage source code, you must retain the original copyright information of the original files in your derivative version. You are free to modify and distribute the source code, but please ensure that the original copyright statement is retained in your modified or distributed version, and indicate the original developers of the team and the license information.
+8. Disclaimer Update
+     Term Changes
+         The team reserves the right to modify the terms of this statement and its attached content at any time and will notify users through the official website announcement. The modified statement will take effect from the date of publication, and continuing to use Sunuer Manage will be considered as acceptance of the modified statement.
+User Responsibility
+      Users are responsible for regularly checking the latest version of this statement and related terms (latest version address: https://www.sunuer.com/SunuerManage/?nid=20) to ensure that they are aware of the latest version. If you continue to use Sunuer Manage after this statement is updated, it will be considered that you have read and accepted the new terms of the statement.
+9. Applicable Law and Dispute Resolution
+         This statement is governed by the laws of the People's Republic of China, and all disputes arising from the use of Sunuer Manage will be subject to the jurisdiction of the court located in the team's location. If any part of this statement is deemed invalid or unenforceable, that part will be modified according to the law, and the other parts will remain valid.
+         Date: 2024-11-27

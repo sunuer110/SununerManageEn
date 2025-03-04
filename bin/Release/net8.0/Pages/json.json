@@ -1,0 +1,108 @@
+[
+  {
+    "CompanyTitle": [
+      {
+        "LanguageKey": "CN",
+        "Title": "ヤマト・スタッフ・サプライ株式会社"
+      },
+      {
+        "LanguageKey": "My",
+        "Title": "ヤマト・スタッフ・サプライ株式会社"
+      },
+      {
+        "LanguageKey": "VN",
+        "Title": "ヤマト・スタッフ・サプライ株式会社"
+      },
+      {
+        "LanguageKey": "NPL",
+        "Title": "ヤマト・スタッフ・サプライ株式会社"
+      },
+      {
+        "LanguageKey": "EN",
+        "Title": "ヤマト・スタッフ・サプライ株式会社"
+      },
+      {
+        "LanguageKey": "JP",
+        "Title": "ヤマト・スタッフ・サプライ株式会社"
+      }
+    ],
+    "CompanyName": [
+      {
+        "LanguageKey": "CN",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "My",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "VN",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "NPL",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "EN",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "JP",
+        "Title": "神奈川港北事業所"
+      }
+    ],
+    "CompanyResidence": [
+      {
+        "LanguageKey": "CN",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "My",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "VN",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "NPL",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "EN",
+        "Title": "神奈川港北事業所"
+      },
+      {
+        "LanguageKey": "JP",
+        "Title": "神奈川港北事業所"
+      }
+    ],
+    "CompanyAddress": [
+      {
+        "LanguageKey": "CN",
+        "Title": "神奈川県横浜市都筑区川向町2005-2　DPL新横浜Ⅱ　3階"
+      },
+      {
+        "LanguageKey": "My",
+        "Title": "神奈川県横浜市都筑区川向町2005-2　DPL新横浜Ⅱ　3階"
+      },
+      {
+        "LanguageKey": "VN",
+        "Title": "神奈川県横浜市都筑区川向町2005-2　DPL新横浜Ⅱ　3階"
+      },
+      {
+        "LanguageKey": "NPL",
+        "Title": "神奈川県横浜市都筑区川向町2005-2　DPL新横浜Ⅱ　3階\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"
+      },
+      {
+        "LanguageKey": "EN",
+        "Title": "神奈川県横浜市都筑区川向町2005-2　DPL新横浜Ⅱ　3階"
+      },
+      {
+        "LanguageKey": "JP",
+        "Title": "神奈川県横浜市都筑区川向町2005-2　DPL新横浜Ⅱ　3階"
+      }
+    ]
+  }
+]

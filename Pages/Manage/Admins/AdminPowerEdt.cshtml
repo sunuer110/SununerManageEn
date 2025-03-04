@@ -1,0 +1,72 @@
+﻿@page
+@model SunuerManageEn.Pages.Manage.Admins.AdminPowerEdtModel
+@{
+    ViewData["Title"] = "Edit Permissions";
+}
+<style>
+    .layui-form-label {
+        width: 120px;
+    }
+</style>
+<div class="layui-form" lay-filter="layuiadmin-app-form-list" id="layuiadmin-app-form-list" style="padding: 20px 30px 0 0;">
+ 
+    <div class="layui-form-item">
+        <label class="layui-form-label">Permission name<span class="red">*</span></label>
+        <div class="layui-input-inline input-inline">
+            <input type="text" name="PowerTitle" lay-verify="required" placeholder="Please enter name" autocomplete="off" class="layui-input" value="@Model.Model.PowerTitle" />
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-inline">
+            <input type="button" lay-submit lay-filter="layuiadmin-app-form-submit" class="layui-btn btn" id="layuiadmin-app-form-submit" value=" Confirm Edit">
+        </div>
+    </div>
+</div>
+<script>
+    layui.config({
+        base: '/js/layuiadmin/' //Path of static resources
+    }).extend({
+        index: 'lib/index' //Main entry module
+        , lang: 'lang/en' // Extend a language module
+    }).use(['index', 'form', 'layer'], function () {
+        var $ = layui.$
+        , form = layui.form;
+
+        //Listen for submission
+        form.on('submit(layuiadmin-app-form-submit)', function (data) {
+            var field = data.field; //Get submitted fields
+            var index = parent.layer.getFrameIndex(window.name); //First, get the current iframe layer's index
+            var count = layer.load(1);
+            $.ajax({
+                url: "/api/AdminPower/Update",
+                type: "post",
+                async: false,
+                data: {
+                    PowerTitle: data.field.PowerTitle
+                    , PowerID: @Model.PowerID
+                },
+                success: function(datax) {
+                    layer.close(count);
+                    if (0 == datax.code) {
+                        layer.msg(datax.msg, { time: 1000 }, function () {
+                            parent.location.reload()
+                            parent.layer.close(index)
+                        });
+                    } else {
+                        layer.msg(datas.msg, {
+                            icon: 1,
+                            time: 3000 //Close after 2 seconds (if not configured, the default is 3 seconds)）
+                        }, function() {
+                            layer.closeAll();
+                        });
+                    }
+                },
+                error: function (e) {
+                    layer.closeAll();
+                    alert("Error！！");
+                }
+            });
+        });
+    })
+</script>

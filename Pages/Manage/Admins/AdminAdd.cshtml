@@ -1,0 +1,166 @@
+﻿@page
+@model SunuerManageEn.Pages.Manage.Admins.AdminAddModel
+@{
+}
+<style>
+    .layui-form-label {
+        width: 160px;
+    }
+
+    .layui-form-item .input-inline {
+        width: 560px;
+    }
+</style>
+<div class="layui-form" lay-filter="layuiadmin-app-form-list" id="layuiadmin-app-form-list" style="padding: 20px 30px 0 0;">
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">Login Name<span class="red">*</span></label>
+        <div class="layui-input-inline input-inline">
+            <input type="text" name="AdminName" lay-verify="required" placeholder="Please enter Login Name" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Nickname<span class="red">*</span></label>
+        <div class="layui-input-inline input-inline">
+            <input type="text" name="AdminNick" lay-verify="required" placeholder="Please enter Nickname" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Login Password<span class="red">*</span></label>
+        <div class="layui-input-inline input-inline">
+            <input type="text" name="PassWord" lay-verify="required" placeholder="Please enter Login Password" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Role<span class="red">*</span></label>
+        <div class="layui-input-inline input-inline">
+            <select name="RoleID" lay-verify="required" id="RoleID" lay-filter="RoleID">
+            </select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Status<span class="red">*</span></label>
+        <div class="layui-input-inline input-inline">
+            <input type="radio" name="Statues" value="0" title="Active" lay-filter="Statues" checked>
+            <input type="radio" name="Statues" value="1" title="Frozen" lay-filter="Statues">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-inline">
+            <input type="button" lay-submit lay-filter="layuiadmin-app-form-submit" class="layui-btn btn" id="layuiadmin-app-form-submit" value=" Confirm Add ">
+        </div>
+    </div>
+</div>
+
+<script src="/js/layuiadmin/xm-select.js"></script>
+<style>
+    .nselect {
+        z-index: 20;
+    }
+
+    .wrap {
+        width: 80%;
+        margin: 40px auto;
+        display: flex;
+    }
+
+        .wrap > div {
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .wrap p {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 40px;
+            color: #ffffff;
+        }
+
+    .layui-tree-line .layui-tree-entry:hover .layui-tree-txt {
+        color: #999;
+        text-decoration: none;
+        transition: .3s;
+    }
+</style>
+
+<script>
+    layui.config({
+        base: '/js/layuiadmin/' //Path of static resources
+    }).extend({
+        index: 'lib/index' //Main entry module
+        , lang: 'lang/en' // Extend a language module
+    }).use(['index', 'form'], function () {
+        var $ = layui.$
+            , form = layui.form;
+       
+            //Pull the Role table
+        $.ajax({
+            url: "/api/AdminRoles/Get",
+            type: "get",
+            data: { Page: 1, PageSize: 20000 },
+            dataType: "json",
+            success: function (Data) {
+                if (Data.code == 0) {
+                    var str = "";
+                    str += GetRoles(str, Data);
+                    $("#RoleID").html(str);
+                    form.render();//Form reload
+                } else {
+                    alert("Data error");
+
+                }
+            }
+        })
+        function GetRoles(str, data) {
+            str += "<option value=\"\">Please select</option>"
+            for (var i = 0; i < data.data.length; i++) {
+                str += "<option value=\"" + data.data[i].RoleID + "\">" + data.data[i].RolesTitle + "</option>"
+            }
+            return str
+        }
+        //Listen for submission
+        form.on('submit(layuiadmin-app-form-submit)', function (data) {
+            var field = data.field; //Get submitted fields
+            var index = parent.layer.getFrameIndex(window.name); //First, get the current iframe layer's index
+            var index = layer.load();
+            //After successful Ajax submission, close the current popup and reload the table
+            //$.ajax({});
+            $.ajax({
+                url: "/api/Admin/Add",
+                type: "post",
+                async: false,
+                data: {
+                    AdminName: data.field.AdminName,
+                    PassWord: data.field.PassWord,
+                    Statues: data.field.Statues,
+                    AdminNick: data.field.AdminNick,
+                    RoleID: data.field.RoleID
+                },
+                success: function (datas) {
+                    if (0 == datas.code) {
+                        layer.msg(datas.msg, {
+                            icon: 1,
+                            time: 3000 //Close after 2 seconds (if not configured, the default is 3 seconds)）
+                        }, function() {
+                            parent.location.reload();
+                            parent.layer.close(index); //Then execute the close.
+                        });
+                    } else {
+                        layer.msg(datas.msg, {
+                            icon: 1,
+                            time: 3000 //Close after 2 seconds (if not configured, the default is 3 seconds)）
+                        }, function() {
+                            layer.closeAll();
+                        });
+                    }
+                },
+                error: function (e) {
+                    layer.closeAll();
+                    alert("Error！！");
+                }
+            });
+        });
+    })
+</script>

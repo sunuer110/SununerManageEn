@@ -1,0 +1,276 @@
+﻿@page
+@model SunuerManageEn.Pages.Manage.consoles.consoleModel
+@{
+}
+<script src="~/js/echarts.min.js"></script>
+<style>
+    .layui-carousel > [carousel-item] > * {
+        display: block;
+    }
+    .td{ width:140px;}
+</style>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">Method</div>
+                        <div class="layui-card-body">
+
+                            <div class="layui-carousel layadmin-carousel layadmin-shortcut">
+                                <div carousel-item>
+                                    <ul class="layui-row layui-col-space10">
+                                        @if (Model.AdminModel.Roles.IndexOf("|5|") > -1)
+                                        {
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="Admins/AdminRolesList">
+                                                    <i class="layui-icon layui-icon-app"></i>
+                                                    <cite>Role Manage</cite>
+                                                </a>
+                                            </li>
+                                        }
+                                        @if (Model.AdminModel.Roles.IndexOf("|9|") > -1)
+                                        {
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="Admins/AdminList">
+                                                    <i class="layui-icon layui-icon-user"></i>
+                                                    <cite>Administrator Manage</cite>
+                                                </a>
+                                            </li>
+                                        }
+                                        @if (Model.AdminModel.Roles.IndexOf("|24|") > -1)
+                                        {
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="ManageSets/ManageSetEdt">
+                                                    <i class="layui-icon layui-icon-set"></i>
+                                                    <cite>System Settings</cite>
+                                                </a>
+                                            </li>
+                                        }
+                                        @if (Model.AdminModel.Roles.IndexOf("|15|") > -1)
+                                        {
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="Admins/AdminPassWord">
+                                                    <i class="layui-icon layui-icon-template-1"></i>
+                                                    <cite>Change password</cite>
+                                                </a>
+                                            </li>
+                                        }
+                                        @if (Model.AdminModel.Roles.IndexOf("|17|") > -1)
+                                        {
+                                            <li class="layui-col-xs3">
+                                                <a lay-href="Articless/ArticleCategoryList">
+                                                    <i class="layui-icon layui-icon-chat"></i>
+                                                    <cite>Article Category</cite>
+                                                </a>
+                                            </li>
+                                        }
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">Management</div>
+                        <div class="layui-card-body">
+
+                            <div class="layui-carousel layadmin-carousel layadmin-backlog">
+                                <div carousel-item>
+                                    <ul class="layui-row layui-col-space10 ct2_hd">
+                                         @foreach (var item in Model.List)
+                                         {
+                                                <li class="layui-col-xs3">
+                                                <a lay-href="Articless/ArticlesList?BigID=@item.BigID" lay-text="@item.BigTitle">
+                                                    <h3>@item.BigTitle</h3>
+                                                    <p><cite>@item.Number</cite></p>
+                                                 </a>
+                                              </li>
+                                         }
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">Data Overview</div>
+                        <div class="layui-card-body">
+                           
+                            <div id="container" style="height: 400px"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-col-md12">
+                    <div class="layui-card" style="height:600px; overflow:auto;">
+                        <iframe src="@Model.url" frameborder="0" class="layadmin-iframe" sandbox="allow-scripts  allow-same-origin" style="width:100%; height:100%;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md4">
+             <div class="layui-card">
+                <div class="layui-card-body layui-text">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="100">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="td">Disclaimer</td>
+                                <td>
+                                    Please read before use
+                                    <a lay-href="Agreement" style="padding-left: 15px;">《Disclaimer》</a>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="layui-card">
+                <div class="layui-card-header">Version Information</div>
+                <div class="layui-card-body layui-text">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="100">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="td">Framework Name</td>
+                                <td>
+                                        Sunuer Manage
+                                   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Current Version</td>
+                                <td>
+                                        v1.0
+                                    <a href="https://www.sunuer.com/SunuerManage?nid=11" target="_blank" style="padding-left: 15px;">Update Logs</a>
+                                  
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Based on Framework</td>
+                                <td>
+                                    Frontend Framework: Layui
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Key Features</td>
+                                <td>Cross-platform,Wide range of applications,Easy to extend and maintain,Quick to get started.</td>
+                            </tr>
+                            <tr>
+                                <td>Acquisition Channels</td>
+                                <td style="padding-bottom: 0;">
+                                    <div class="layui-btn-container">
+                                        <a href="https://www.sunuer.com/sunermanage/" target="_blank" class="layui-btn">Official Website</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="layui-card">
+                <div class="layui-card-header">Product Updates</div>
+                <div class="layui-card-body">
+                    <div class="layui-carousel layadmin-carousel layadmin-news"  lay-filter="news">
+                        <div>
+                            <div><a href="https://www.sunuer.com/SunerManage/" target="_blank" class="layui-bg-blue">Obtain SunuerManage</a></div>
+                            <div style="margin-top:20px;"><a href="https://www.sunuer.com/SunuerEasy/" target="_blank" class="layui-bg-red">Obtain SunuerEasy</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    Author's Note
+                    <i class="layui-icon layui-icon-tips" lay-tips="Support is needed" lay-offset="5"></i>
+                </div>
+                <div class="layui-card-body layui-text layadmin-text">
+                    <p>
+                        I've always wanted to develop a cross-platform management system to serve as the main framework for our development projects—saving time, reducing repetitive work, and accelerating project launches and iterations.
+                    </p>
+                    <p>Thus, I created Sunuer Manage, a management system suitable for various web applications, including:Website admin panels，Member centers，Content Management Systems (CMS)，Customer Relationship Management (CRM)，Office Automation Systems (OA)，Manufacturing Execution Systems (MES)。</p>
+                    <p>Whether for enterprise applications or personal projects, Sunuer Manage can meet your needs. The system will be continuously updated and optimized, aiming to provide developers with a more efficient development experience.</p>
+                    <p>—— HaiDong（<a href="https://www.sunuer.com/" target="_blank">sunuer.com</a>）</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    layui.config({
+        base: '/js/layuiadmin/' //Path of static resources
+    }).extend({
+        index: 'lib/index' //Main entry module
+        , lang: 'lang/en' // Extend a language module
+    }).use('index');
+</script>
+<script type="text/javascript">
+    // Initialize an ECharts instance based on the prepared DOM
+        var myChart = echarts.init(document.getElementById('container'));
+    // Specify chart configuration and data
+        option = {
+            title: {
+                text: 'Data statistics'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+            data: ['Article publication data']
+            },
+            grid: {
+                left: '3%',
+                right: '4%',
+                bottom: '3%',
+                containLabel: true
+            },
+            toolbox: {
+                feature: {
+                    saveAsImage: {},
+                    magicType: { type: ['line', 'bar'] },
+                }
+            },
+            xAxis: {
+                type: 'category',
+                boundaryGap: false,
+                data: @Html.Raw(Model.DataList)
+            },
+            yAxis: {
+                type: 'value'
+            },
+            series: [
+                {
+                name: 'Article Publication Status',
+                    type: 'line',
+                    data: @Html.Raw(Model.TotalList)
+                },
+            ]
+        };
+    // Render the chart using the specified configuration and data
+            myChart.setOption(option);
+            
+        function htmlDecode(input) {
+            var e = document.createElement('div');
+            e.innerHTML = input;
+            return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+        }
+    </script>

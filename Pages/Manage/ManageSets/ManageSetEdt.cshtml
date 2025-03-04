@@ -1,0 +1,186 @@
+﻿@page
+@model SunuerManageEn.Pages.Manage.ManageSets.ManageSetEdtModel
+@{
+}
+<div class="layui-form" lay-filter="layuiadmin-app-form-list" id="layuiadmin-app-form-list" style="padding: 20px 30px 0 0;">
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">System Name<span class="red">*</span></label>
+        <div class="layui-input-block">
+            <input class="layui-input" name="ManageTitle" type="text" placeholder="System Name" lay-verify="required" id="ManageTitle" value="@Model.Model.ManageTitle">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Keywords</label>
+        <div class="layui-input-block">
+            <textarea name="ManageKey" class="layui-textarea" placeholder="Keywords" id="ManageKey">@Model.Model.ManageKey</textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Description</label>
+        <div class="layui-input-block">
+            <textarea name="ManageDesn" class="layui-textarea" placeholder="Description" id="ManageDesn">@Model.Model.ManageDesn</textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Website URL</label>
+        <div class="layui-input-block">
+            <input name="ManageUrl" class="layui-input" type="text" placeholder="Website URL" value="@Model.Model.ManageUrl" id="ManageUrl">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Phone</label>
+        <div class="layui-input-block">
+            <input name="Phone" class="layui-input" type="text" placeholder="Phone" value="@Model.Model.Phone" id="Phone">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">Email</label>
+        <div class="layui-input-block">
+            <input name="Email" class="layui-input" type="text" placeholder="Email" value="@Model.Model.Email" id="Email">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">Address</label>
+        <div class="layui-input-block">
+            <input name="Address" class="layui-input" type="text" placeholder="Address" value="@Model.Model.Address" id="Address">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">Copyright</label>
+        <div class="layui-input-block">
+            <input name="CopyRight" class="layui-input" type="text" placeholder="Copyright" value="@Model.Model.CopyRight" id="CopyRight">
+        </div>
+    </div>
+
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">Images Website</label>
+        <div class="layui-input-block">
+            <input name="ImageUrl" class="layui-input" type="text" placeholder="ImageUrl" value="@Model.Model.ImageUrl" id="ImageUrl">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label">Website LOGO</label>
+        <div class="layui-input-block">
+            <div id="UpImageLogo" class="layui-upload-list" style="float: left; margin-left: 10px;">
+                <img id="ImageLogo" class="layui-upload-img HeadPortrait_Ordinary" src='@Model.Model.Logo'>
+                <div class="layui-upload-drag" id="ImageUpLogo" style="padding:0px; display:block;">
+                    <i class="layui-icon">&#xe67c;</i>
+                    <p>Click to upload, or drag and drop the file here.</p>
+                </div>
+
+                <input id="PicturePathLogo" name="Logo" type="hidden" value="@Model.Model.Logo" />
+
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class="layui-input-inline">
+            <input type="button" lay-submit lay-filter="layuiadmin-app-form-submit" class="layui-btn btn" id="layuiadmin-app-form-submit" value=" Confirm Edit">
+        </div>
+    </div>
+</div>   
+
+<script>
+    //Single image upload (Images)
+    layui.use('upload', function() {
+        upload = layui.upload;
+        var uploadInst = upload.render({
+            elem: '#ImageUpLogo',
+            url: '/api/Files/Upload?name=logo',
+            accept: 'Logo',
+            auto: true,
+            size: 1420,
+            choose: function(obj) {
+                //Pre-read local files (Not supported in IE8)
+                obj.preview(function(index, file, result) {
+                    $('#ImageLogo').attr('src', result); // Image link（base64）
+                });
+            },
+            done: function(res) {
+                if (0 != res.Code) {
+                    return layer.msg(res.Messge);
+                }
+                else {
+                    $('#PicturePathLogo').val(res.FileUrl);
+                    $('#ImageLogo').attr('src', res.FileUrl);
+                    return layer.msg(res.Messge);
+                }
+            },
+            error: function() {
+                //Demonstrate Failed Status and implement retry
+                var demoText = $('#errorText');
+                demoText.html('<span style="color: #FF5722;">Upload failed</span> <a class="layui-btn layui-btn-xs demo-reload">Retry</a>');
+                demoText.find('.demo-reload').on('click', function() {
+                    uploadInst.upload();
+                });
+            }
+        });
+        //ImagesTitle View
+        layer.photos({
+            photos: '.layui-upload-list',
+            anim: 0 //Select from 0-6 to specify the popup image animation type
+        });
+
+    });
+    layui.config({
+        base: '/js/layuiadmin/' //Path of static resources
+    }).extend({
+        index: 'lib/index' //Main entry module
+        , lang: 'lang/en' // Extend a language module
+    }).use(['index', 'form', 'layer'], function() {
+        var $ = layui.$
+            , form = layui.form;
+       
+        //Listen for submission
+        form.on('submit(layuiadmin-app-form-submit)', function(data) {
+            var field = data.field; //Get submitted fields
+            var index = parent.layer.getFrameIndex(window.name); //First, get the current iframe layer's index
+            var count = layer.load(1);
+            $.ajax({
+                url: "/api/ManageSet/Update",
+                type: "post",
+                async: false,
+                data: {
+                    ManageTitle: data.field.ManageTitle,
+                    ManageKey: data.field.ManageKey,
+                    ManageDesn: data.field.ManageDesn,
+                    ManageUrl: data.field.ManageUrl,
+                    Phone: data.field.Phone,
+                    Email: data.field.Email,
+                    Address: data.field.Address,
+                    CopyRight: data.field.CopyRight,
+                    ImageUrl: data.field.ImageUrl,
+                    About: data.field.About,
+                    Logo: data.field.Logo
+                        },
+                success: function(datax) {
+                    layer.close(count);
+                    if (0 == datax.code) {
+                        layer.msg(datax.msg, { time: 1000 }, function() {
+                           location.reload()
+                           layer.close(index)
+                        });
+                    } else {
+                        layer.msg(datas.msg, {
+                            icon: 1,
+                            time: 3000 //Close after 2 seconds (if not configured, the default is 3 seconds)）
+                        }, function() {
+                            layer.closeAll();
+                        });
+                    }
+                },
+                error: function(e) {
+                    layer.closeAll();
+                    alert("Error！！");
+                }
+            });
+        });
+    })
+</script>
