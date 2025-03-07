@@ -157,6 +157,27 @@
                         </li>
                     }
 
+                    @if (Model.AdminModel.Roles.IndexOf("|400|") > -1)
+                    {
+                        <li data-name="set" class="layui-nav-item">
+
+                            <a href="javascript:;" lay-tips="Message管理" lay-direction="3">
+                                <i class="layui-icon layui-icon-template"></i>
+                                <cite>Manage Message</cite>
+                            </a>
+                            <dl class="layui-nav-child">
+                                @if (Model.AdminModel.Roles.IndexOf("|401|") > -1)
+                                {
+                                    <dd><a lay-href="LeaveMessages/LeaveMessageSetEdt">Message Configuration</a></dd>
+                                }
+                                @if (Model.AdminModel.Roles.IndexOf("|402|") > -1)
+                                {
+                                    <dd><a lay-href="LeaveMessages/LeaveMessageAdd">Add</a></dd>
+                                    <dd><a lay-href="LeaveMessages/LeaveMessageList">Message</a></dd>
+                                }
+                            </dl>
+                        </li>
+                    }
                    
                 </ul>
                 <div class="hd"></div>

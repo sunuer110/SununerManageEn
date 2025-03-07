@@ -1,0 +1,128 @@
+﻿@page
+@model Web.Pages.Manage.LeaveMessages.LeaveMessageAddModel
+@{
+}
+<link href="~/css/leavemessage.css" rel="stylesheet" />
+<div class="layui-form" lay-filter="layuiadmin-app-form-list" id="layuiadmin-app-form-list" style="padding: 20px 0px 0 0;">
+    <h1 style="padding:20px">Message</h1>
+    <hr style="border-bottom:1px solid #ddd" />
+    <div class="layui-form-item">
+        <label class='layui-form-label myLabel'>Title<span class="red">*</span></label>
+        <div class='layui-input-block myInput'>
+            <input name="Title" class="layui-input" lay-verify="required" type="text" placeholder="Title">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class='layui-form-label myLabel'>
+            Phone
+            @if (Model.Model.PhoneRequire == 1)
+            {
+                <span class="red">*</span>
+            }
+        </label>
+        <div class='layui-input-block myInput'>
+            <input name="Phone" class="layui-input" lay-verify='@(Model.Model.PhoneRequire == 1?"required|phonemsg":"phonemsg")' type="text" placeholder="Phone">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class='layui-form-label myLabel'>
+            Name
+            @if (Model.Model.NameRequire == 1)
+            {
+                <span class="red">*</span>
+            }
+        </label>
+        <div class='layui-input-block myInput'>
+            <input name="UserName" class="layui-input" lay-verify="@(Model.Model.NameRequire == 1?"required":"")" type="text" placeholder="Name">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class='layui-form-label myLabel'>
+            Email
+            @if (Model.Model.EmailRequire == 1)
+            {
+                <span class="red">*</span>
+            }
+        </label>
+        <div class='layui-input-block myInput'>
+            <input name="Email" class="layui-input" lay-verify="@(Model.Model.EmailRequire == 1?"required|emailmsg":"emailmsg")" type="text" placeholder="Email">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class='layui-form-label myLabel'>Content<span class="red">*</span></label>
+        <div class='layui-input-block myInput)'>
+            <textarea name="Content" class="layui-textarea" placeholder="Content" lay-verify="required"></textarea>
+        </div>
+    </div>
+    
+    
+
+    <div class="layui-form-item">
+        <label class="layui-form-label"></label>
+        <div class='layui-input-inline mySubBtn'>
+            <input type="button" lay-submit lay-filter="layuiadmin-app-form-submit" class="layui-btn btn" id="layuiadmin-app-form-submit" value="Confirm Message">
+        </div>
+    </div>
+</div>   
+<script>
+    
+    layui.config({
+        base: '/js/layuiadmin/'
+    }).extend({
+        index: 'lib/index' 
+    }).use(['index', 'form', 'layer'], function() {
+        var $ = layui.$
+            , form = layui.form;
+        // Custom Prompt Format
+        form.verify({
+            phonemsg: function (value, item) { //value：Form Value, item: Form DOM Object
+                if (value != "") {  //Validate Only When the Value is Not Empty
+                    if (!/^1\d{10}$/.test(value)) {
+                        return 'Phone Invalid Format';
+                    }
+                }
+            },
+            emailmsg: function (value, item) { //value：Form Value, item: Form DOM Object
+                if (value != "") {  //Validate Only When the Value is Not Empty
+                    if (!/^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
+                        return 'Email Invalid Format';
+                    }
+                }
+            }
+        })
+        //监听提交
+        form.on('submit(layuiadmin-app-form-submit)', function(data) {
+            var field = data.field; //Retrieve Submitted Fields
+            var index = parent.layer.getFrameIndex(window.name); //Get the Current iframe Layer Index
+            var count = layer.load(1);
+            $.ajax({
+                url: "/api/LeaveMessage/Add",
+                type: "post",
+                async: false,
+                data: {
+                   ...field
+                        },
+                success: function(datax) {
+                    layer.close(count);
+                    if (0 == datax.code) {
+                        layer.msg(datax.msg, { time: 1000 }, function() {
+                           location.reload()
+                           layer.close(index)
+                        });
+                    } else {
+                        layer.msg(datax.msg, {
+                            icon: 2,
+                            time: 3000 
+                        }, function() {
+                            layer.closeAll();
+                        });
+                    }
+                },
+                error: function(e) {
+                    layer.closeAll();
+                    alert("Error！！");
+                }
+            });
+        });
+    })
+</script>
