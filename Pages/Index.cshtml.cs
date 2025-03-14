@@ -22,6 +22,7 @@ namespace SunuerManageEn.Pages
         public List<Articles.ArticlesModel> NewsList5 = new List<Articles.ArticlesModel>();
         public List<Articles.ArticlesModel> NewsList6 = new List<Articles.ArticlesModel>();
 
+        public bool IsMobile { get; set; } = false;
 
         //Passing Parameters to Layout Page
         public SunuerManageEn.Pages.Shared.MenuModel? Menu { get; set; }
@@ -36,7 +37,10 @@ namespace SunuerManageEn.Pages
             ViewData["Title"] = Tools.ConfigurationHelper.GetConfigValue("ManageSet:ManageTitle");
             ViewData["KeyWords"] = Tools.ConfigurationHelper.GetConfigValue("ManageSet:ManageKey");
             ViewData["Description"] = Tools.ConfigurationHelper.GetConfigValue("ManageSet:ManageDesn");
-          
+            if (Tools.Tools.IsMobileDevice(HttpContext.Request))
+            {
+                IsMobile = true;
+            }
             GetLunxian();
             GetCase();
             GetNews4();
@@ -47,9 +51,16 @@ namespace SunuerManageEn.Pages
         {
             //Slideshow
             Articles.ArticlesDal Dal = new Articles.ArticlesDal();
-
-            DataTable Datas = Dal.GetTop(9,"",1,10);
-            ArticlesList = Tools.DataTableToList.DatatableToList<Articles.ArticlesModel>(Datas);
+            if (IsMobile)
+            {
+                DataTable Datas = Dal.GetTop(12, "", 1, 12);
+                ArticlesList = Tools.DataTableToList.DatatableToList<Articles.ArticlesModel>(Datas);
+            }
+            else
+            {
+                DataTable Datas = Dal.GetTop(11, "", 1, 12);
+                ArticlesList = Tools.DataTableToList.DatatableToList<Articles.ArticlesModel>(Datas);
+            }
         }
         public void GetCase()
         {

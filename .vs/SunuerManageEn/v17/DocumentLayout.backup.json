@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\sites\\NET8\\SunuerManageEn\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\tools\\tools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:tools\\tools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:.gitattributes||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\pages\\manage\\leavemessages\\leavemessagesetedt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:pages\\manage\\leavemessages\\leavemessagesetedt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -98,11 +110,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Index.cshtml.cs",
+              "ToolTip": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Index.cshtml.cs",
+              "RelativeToolTip": "Pages\\Index.cshtml.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwD4AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T05:40:32.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Tools.cs",
+              "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Tools\\Tools.cs",
+              "RelativeDocumentMoniker": "Tools\\Tools.cs",
+              "ToolTip": "D:\\sites\\NET8\\SunuerManageEn\\Tools\\Tools.cs",
+              "RelativeToolTip": "Tools\\Tools.cs",
+              "ViewState": "AgIAAC4BAAAAAAAAAAAUwDYBAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T05:37:02.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": ".gitattributes",
+              "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\.gitattributes",
+              "RelativeDocumentMoniker": ".gitattributes",
+              "ToolTip": "D:\\sites\\NET8\\SunuerManageEn\\.gitattributes",
+              "RelativeToolTip": ".gitattributes",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-07T08:45:26.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "LeaveMessageSetEdt.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml.cs",
@@ -110,25 +161,23 @@
               "RelativeToolTip": "Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAQwBEAAABnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:38:33.258Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:38:33.258Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "LeaveMessageSetEdt.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml",
               "ToolTip": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml",
               "RelativeToolTip": "Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFQAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAAFMAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T08:37:20.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:37:20.128Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "ArticleCategoryAdd.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Articless\\ArticleCategoryAdd.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\Articless\\ArticleCategoryAdd.cshtml",
@@ -136,12 +185,11 @@
               "RelativeToolTip": "Pages\\Manage\\Articless\\ArticleCategoryAdd.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T08:37:10.327Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:37:10.327Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "ArticlesList.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Articless\\ArticlesList.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\Articless\\ArticlesList.cshtml.cs",
@@ -149,12 +197,11 @@
               "RelativeToolTip": "Pages\\Manage\\Articless\\ArticlesList.cshtml.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:31:30.636Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:31:30.636Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "LeaveMessageList.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml",
@@ -162,12 +209,11 @@
               "RelativeToolTip": "Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAADwvwYBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T08:27:33.558Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:27:33.558Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "LeaveMessageList.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml.cs",
@@ -175,12 +221,11 @@
               "RelativeToolTip": "Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:27:10.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:27:10.979Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "LeaveMessageAudit.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml",
@@ -188,12 +233,11 @@
               "RelativeToolTip": "Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml",
               "ViewState": "AgIAANUAAAAAAAAAAADwv+QAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T08:25:15.269Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:25:15.269Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "LeaveMessageAudit.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml.cs",
@@ -201,12 +245,11 @@
               "RelativeToolTip": "Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml.cs",
               "ViewState": "AgIAAC4AAAAAAAAAAAAUwAcAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:24:37.743Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:24:37.743Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "LeaveMessageAdd.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml.cs",
@@ -214,12 +257,11 @@
               "RelativeToolTip": "Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAIwCYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:20:26.587Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:20:26.587Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "LeaveMessageAdd.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml",
@@ -227,12 +269,11 @@
               "RelativeToolTip": "Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAHoAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T08:20:23.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:20:23.211Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "LeaveMessageSetController.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Controllers\\LeaveMessage\\LeaveMessageSetController.cs",
               "RelativeDocumentMoniker": "Controllers\\LeaveMessage\\LeaveMessageSetController.cs",
@@ -240,12 +281,11 @@
               "RelativeToolTip": "Controllers\\LeaveMessage\\LeaveMessageSetController.cs",
               "ViewState": "AgIAAGAAAAAAAAAAAAAQwGAAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T08:18:42.992Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:18:42.992Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "LeaveMessageSetModel.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\LeaveMessage\\LeaveMessageSetModel.cs",
               "RelativeDocumentMoniker": "Code\\LeaveMessage\\LeaveMessageSetModel.cs",
@@ -253,12 +293,11 @@
               "RelativeToolTip": "Code\\LeaveMessage\\LeaveMessageSetModel.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T07:57:49.748Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:57:49.748Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "LeaveMessageSetDal.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\LeaveMessage\\LeaveMessageSetDal.cs",
               "RelativeDocumentMoniker": "Code\\LeaveMessage\\LeaveMessageSetDal.cs",
@@ -266,12 +305,11 @@
               "RelativeToolTip": "Code\\LeaveMessage\\LeaveMessageSetDal.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAIwCsAAABRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T07:56:09.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:56:09.295Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "LeaveMessageModel.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\LeaveMessage\\LeaveMessageModel.cs",
               "RelativeDocumentMoniker": "Code\\LeaveMessage\\LeaveMessageModel.cs",
@@ -279,12 +317,11 @@
               "RelativeToolTip": "Code\\LeaveMessage\\LeaveMessageModel.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAAcwB8AAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T07:54:40.067Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:54:40.067Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "LeaveMessageDal.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\LeaveMessage\\LeaveMessageDal.cs",
               "RelativeDocumentMoniker": "Code\\LeaveMessage\\LeaveMessageDal.cs",
@@ -292,12 +329,11 @@
               "RelativeToolTip": "Code\\LeaveMessage\\LeaveMessageDal.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAkwCIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T07:49:21.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T07:49:21.757Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "admin_index.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\admin_index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\admin_index.cshtml",
@@ -305,12 +341,11 @@
               "RelativeToolTip": "Pages\\Manage\\admin_index.cshtml",
               "ViewState": "AgIAAJUAAAAAAAAAAAAIwKoAAABsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-07T06:23:52.732Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T06:23:52.732Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "AdminPowerDal.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\Admin\\AdminPowerDal.cs",
               "RelativeDocumentMoniker": "Code\\Admin\\AdminPowerDal.cs",
@@ -318,12 +353,11 @@
               "RelativeToolTip": "Code\\Admin\\AdminPowerDal.cs",
               "ViewState": "AgIAAJIAAAAAAAAAAAAswKoAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-07T06:22:24.445Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T06:22:24.445Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "style.css",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
@@ -331,12 +365,11 @@
               "RelativeToolTip": "wwwroot\\css\\style.css",
               "ViewState": "AgIAAMYBAAAAAAAAAAAowM8BAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-03-05T07:04:44.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-05T07:04:44.528Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml",
@@ -348,7 +381,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -360,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Login.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\Login.cshtml",
@@ -372,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "console.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\consoles\\console.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\consoles\\console.cshtml",

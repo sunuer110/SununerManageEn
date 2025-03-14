@@ -307,5 +307,15 @@ namespace Tools
             // Return the new URL
             return uriBuilder.ToString();
         }
+        /// <summary>
+        // Check if the Device is Mobile
+        /// </summary>
+        /// <param name="request">HttpRequest request</param>
+        /// <returns>true/fasle</returns>
+        public static bool IsMobileDevice(HttpRequest request)
+        {
+            var userAgent = request.Headers["User-Agent"].ToString().ToLower();
+            return userAgent.Contains("mobi") || userAgent.Contains("android") || userAgent.Contains("iphone");
+        }
     }
 }
