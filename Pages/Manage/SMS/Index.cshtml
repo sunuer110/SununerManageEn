@@ -1,0 +1,279 @@
+﻿@page
+@model SunuerManage.Pages.Manage.SMS.IndexModel
+@{
+}
+<link href="~/css/registered.css" rel="stylesheet" />
+
+<style>
+    .layui-tab-brief > .layui-tab-title .layui-this {
+        color: #1067F9;
+    }
+
+        .layui-tab-brief > .layui-tab-more li.layui-this:after, .layui-tab-brief > .layui-tab-title .layui-this:after {
+            border-bottom: 2px solid #1067F9;
+        }
+
+    .layui-form-label {
+        width: 100px;
+    }
+
+    .layui-input {
+        height: 48px;
+    }
+
+    .layui-form-label {
+        line-height: 40px;
+    }
+
+    .layui-form-item .layui-input-inline {
+        width: 180px;
+    }
+
+    .layui-form-item .layui-input-inline {
+        margin-right: 0;
+    }
+
+    .layui-form-mid {
+        padding: 0 !important;
+        margin-right: 0;
+    }
+
+    .yzmBtn {
+        height: 48px;
+    }
+
+    .layui-input-block{
+        margin-left: 130px;
+    }
+
+    .layui-tab-bar{
+        display: none;
+    }
+
+    .layui-input:focus, .layui-textarea:focus{
+        border-color: #3BA2EF !important;
+    }
+</style>
+<div class="contents">
+    <div class="content">
+        <div class="h1">
+            <div>
+                <h1>Verification Code</h1>
+            </div>
+
+        </div>
+        <div class="application page-section" style="padding: 40px 0 40px 0;">
+            <div class="container" style="background: #fff;">
+                <div class="formContainer">
+                    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                        <ul class="layui-tab-title">
+                            <li style="width: 45%;" class=" layui-this"><i class="layui-icon layui-icon-cellphone mid"></i><span class="mid">Phone</span></li>
+                            <li style="width: 45%;"><i class="layui-icon layui-icon-email mid" style="font-size:26px;"></i><span class="mid">Email</span></li>
+                        </ul>
+                        <div class="layui-tab-content">
+                            <div class="layui-tab-item layui-show">
+                                <div class="layui-form" lay-filter="layuiadmin-app-form-list2"
+                                     id="layuiadmin-app-form-list2">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">Phone Number</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="Phone" id="Phone" required lay-verify="required|phone"
+                                                   placeholder="Phone Number" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">Verification Code</label>
+                                        <div class="layui-input-block" style="display: flex">
+                                            <input type="text" name="Code" required lay-verify="required"
+                                                   placeholder="Verification Code" style="border-radius: 2px 0 0 2px"
+                                                   autocomplete="off" class="layui-input">
+                                            <div class="layui-form-mid layui-word-aux">
+                                                <button id="GetYzm"  class="yzmBtn layui-btn layui-btn-primary">
+                                                    Get Verification Code
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-tab-item ">
+                                <div class="layui-form" lay-filter="layuiadmin-app-form-list" id="layuiadmin-app-form-list">
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">Email</label>
+                                        <div class="layui-input-block">
+                                            <input type="text" name="Email" id="Email" required lay-verify="required|emailmsg"
+                                                   placeholder="Email" autocomplete="off" class="layui-input">
+                                        </div>
+                                    </div>
+                                    <div class="layui-form-item">
+                                        <label class="layui-form-label">Verification Code</label>
+                                        <div class="layui-input-block" style="display: flex">
+                                            <input type="text" name="Code" required lay-verify="required"
+                                                   placeholder="Verification Code" style="border-radius: 2px 0 0 2px" autocomplete="off"
+                                                   class="layui-input">
+                                            <div class="layui-form-mid layui-word-aux">
+                                                <button id="GetYzm2"  class="yzmBtn layui-btn layui-btn-primary">
+                                                    Get Verification Code
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/javascript.js"></script>
+<script type="text/javascript">
+    $(function() {
+
+        layui.config({
+            base: '/js/layuiadmin/'
+        }).extend({
+            index: 'lib/index'
+        }).use(['index'], function() {
+            var $ = layui.$
+                , admin = layui.admin
+                , element = layui.element
+                , layer = layui.layer
+                , form = layui.form;
+            // Custom Prompt Format
+            form.verify({
+                emailmsg: function (value, item) { 
+                    if (value != "") { 
+                        if (!/^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(value)) {
+                            return 'Invalid Email Format';
+                        }
+                    }
+                }
+            })
+            $("#GetYzm")[0].addEventListener('click', function (event) {
+                var tid = 1;
+                var Vstr = /^[1][3|4|5|7|8|6|9][0-9]{9}$/;//Change Phone Number Validation Regex for the Corresponding Country
+                var Phone = $("#Phone").val();
+                if (Phone == "") {
+                    layer.msg("Phone Number Cannot Be Empty!");
+                    return false;
+                }
+                if (!Vstr.test(Phone)) {
+                    layer.msg("Invalid Phone Number!");
+                    return false;
+                }
+                if (event.target.innerText == "Resend Verification Code" || event.target.innerText == "Get Verification Code") {
+                    console.log("Click to Get Verification Code", event)
+                    var time = 60;
+                    var timer = setInterval(() => {
+                        if (time <= 0) {
+                            clearInterval(timer);
+                            event.target.innerText = "Resend Verification Code"
+                        } else {
+                            time -= 1;
+                            event.target.innerText = time + "S"
+                        }
+
+                    }, 1000)
+
+                    $.ajax({
+                        url: "/api/SMS/SendCode",
+                        type: "post",
+                        async: false,
+                        data: {
+                            Phone,
+                            Tipid: tid
+                        },
+                        success: function (datax) {
+                            layer.close(count);
+                            if (0 == datax.code) {
+                                layer.msg(datax.msg, { time: 1000 }, function () {
+                                    // layer.close(index)
+                                });
+                            } else {
+                                layer.msg(datax.msg, {
+                                    icon: 2,
+                                    time: 3000 
+                                }, function () {
+                                    layer.closeAll();
+                                });
+                            }
+                        },
+                        error: function (e) {
+                            layer.closeAll();
+                            alert("Error");
+                        }
+                    })
+                } else {
+                    console.log("Repeated Clicks")
+                }
+
+
+            });
+            $("#GetYzm2")[0].addEventListener('click', function (event) {
+                var tid = 1;
+                var Vstr = /^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                var Email = $("#Email").val();
+                if (Email == "") {
+                    layer.msg("Email Address Cannot Be Empty!");
+                    return false;
+                }
+                if (!Vstr.test(Email)) {
+                    layer.msg("Invalid Email Address!");
+                    return false;
+                }
+                if (event.target.innerText == "Resend Verification Code" || event.target.innerText == "Get Verification Code") {
+                    console.log("Click to Get Verification Code", event)
+                    var time = 60;
+                    var timer = setInterval(() => {
+                        if (time <= 0) {
+                            clearInterval(timer);
+                            event.target.innerText = "Resend Verification Code"
+                        } else {
+                            time -= 1;
+                            event.target.innerText = time + "S"
+                        }
+
+                    }, 1000)
+                    $.ajax({
+                        url: "/api/SMS/SendCode",
+                        type: "post",
+                        async: false,
+                        data: {
+                            Email,
+                            Tipid: tid
+                        },
+                        success: function (datax) {
+                            layer.close(count);
+                            if (0 == datax.code) {
+                                layer.msg(datax.msg, { time: 1000 }, function () {
+                                    // layer.close(index)
+
+                                });
+                            } else {
+                                layer.msg(datax.msg, {
+                                    icon: 2,
+                                    time: 3000
+                                }, function () {
+                                    layer.closeAll();
+                                });
+                            }
+                        },
+                        error: function (e) {
+                            layer.closeAll();
+                            alert("Error!");
+                        }
+                    })
+                } else {
+                    console.log("Repeated Clicks")
+                }
+
+
+            });
+
+        });
+    });
+</script>

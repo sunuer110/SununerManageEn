@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\sites\\NET8\\SunuerManageEn\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\wwwroot\\css\\registered.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:wwwroot\\css\\registered.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:pages\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -115,19 +119,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Registered.css",
+              "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\wwwroot\\css\\Registered.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\Registered.css",
+              "ToolTip": "D:\\sites\\NET8\\SunuerManageEn\\wwwroot\\css\\Registered.css",
+              "RelativeToolTip": "wwwroot\\css\\Registered.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-03-15T06:32:12.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml.cs",
               "ToolTip": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Index.cshtml.cs",
               "RelativeToolTip": "Pages\\Index.cshtml.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAUwD4AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAACwAAAAAAAAAAAAUwDYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-14T05:40:32.386Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Tools.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Tools\\Tools.cs",
               "RelativeDocumentMoniker": "Tools\\Tools.cs",
@@ -135,12 +152,11 @@
               "RelativeToolTip": "Tools\\Tools.cs",
               "ViewState": "AgIAAC4BAAAAAAAAAAAUwDYBAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T05:37:02.581Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-14T05:37:02.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": ".gitattributes",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\.gitattributes",
               "RelativeDocumentMoniker": ".gitattributes",
@@ -148,12 +164,11 @@
               "RelativeToolTip": ".gitattributes",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-03-07T08:45:26.029Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-07T08:45:26.029Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "LeaveMessageSetEdt.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml.cs",
@@ -165,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "LeaveMessageSetEdt.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageSetEdt.cshtml",
@@ -177,7 +192,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ArticleCategoryAdd.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Articless\\ArticleCategoryAdd.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\Articless\\ArticleCategoryAdd.cshtml",
@@ -189,7 +204,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ArticlesList.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Articless\\ArticlesList.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\Articless\\ArticlesList.cshtml.cs",
@@ -201,7 +216,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "LeaveMessageList.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml",
@@ -213,7 +228,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "LeaveMessageList.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml.cs",
@@ -225,7 +240,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "LeaveMessageAudit.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml",
@@ -237,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "LeaveMessageAudit.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageAudit.cshtml.cs",
@@ -249,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "LeaveMessageAdd.cshtml.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml.cs",
@@ -261,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "LeaveMessageAdd.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageAdd.cshtml",
@@ -273,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "LeaveMessageSetController.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Controllers\\LeaveMessage\\LeaveMessageSetController.cs",
               "RelativeDocumentMoniker": "Controllers\\LeaveMessage\\LeaveMessageSetController.cs",
@@ -285,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "LeaveMessageSetModel.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\LeaveMessage\\LeaveMessageSetModel.cs",
               "RelativeDocumentMoniker": "Code\\LeaveMessage\\LeaveMessageSetModel.cs",
@@ -297,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "LeaveMessageSetDal.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\LeaveMessage\\LeaveMessageSetDal.cs",
               "RelativeDocumentMoniker": "Code\\LeaveMessage\\LeaveMessageSetDal.cs",
@@ -309,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "LeaveMessageModel.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\LeaveMessage\\LeaveMessageModel.cs",
               "RelativeDocumentMoniker": "Code\\LeaveMessage\\LeaveMessageModel.cs",
@@ -321,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "LeaveMessageDal.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\LeaveMessage\\LeaveMessageDal.cs",
               "RelativeDocumentMoniker": "Code\\LeaveMessage\\LeaveMessageDal.cs",
@@ -333,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "admin_index.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\admin_index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\admin_index.cshtml",
@@ -345,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "AdminPowerDal.cs",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Code\\Admin\\AdminPowerDal.cs",
               "RelativeDocumentMoniker": "Code\\Admin\\AdminPowerDal.cs",
@@ -357,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "style.css",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
@@ -369,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Index.cshtml",
@@ -381,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
@@ -393,7 +408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Login.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Login.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\Login.cshtml",
@@ -405,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "console.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\consoles\\console.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\consoles\\console.cshtml",
