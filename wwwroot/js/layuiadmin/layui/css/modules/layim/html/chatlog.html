@@ -52,7 +52,7 @@ layui.use(['layim', 'laypage'], function(){
   //开始请求聊天记录
   var param =  location.search //获得URL参数。该窗口url会携带会话id和type，他们是你请求聊天记录的重要凭据
   
-  //实际使用时，下述的res一般是 ApprovedAjax获得，而此处仅仅只是演示数据格式
+  //实际使用时，下述的res一般是通过Ajax获得，而此处仅仅只是演示数据格式
   ,res = {
     code: 0
     ,msg: ''
@@ -79,7 +79,7 @@ layui.use(['layim', 'laypage'], function(){
       ,id: 108101
       ,avatar: 'http://tva3.sinaimg.cn/crop.0.0.512.512.180/8693225ajw8f2rt20ptykj20e80e8weu.jpg'
       ,timestamp: 1480897908000
-      ,content: '注意：这些都是模拟数据，实际使用时，需将其中的Interface改为你的项目真实接口。\n该模版文件所在目录（相对于layui.js）：\n/css/modules/layim/html/chatlog.html'
+      ,content: '注意：这些都是模拟数据，实际使用时，需将其中的模拟接口改为你的项目真实接口。\n该模版文件所在目录（相对于layui.js）：\n/css/modules/layim/html/chatlog.html'
     }]
   }
   

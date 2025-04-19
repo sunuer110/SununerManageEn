@@ -55,7 +55,7 @@ layui.define(function(exports){
     layerbox.setAttribute('class', classs[0] + ' ' + classs[0]+(config.type || 0));
     layerbox.setAttribute('index', index);
     
-    //Title 区域
+    //标题区域
     var title = (function(){
       var titype = typeof config.title === 'object';
       return config.title
@@ -126,7 +126,7 @@ layui.define(function(exports){
       }, config.time*1000);
     }
     
-    // Confirm 取消
+    //确认Cancel
     var btn = function(){
       var type = this.getAttribute('type');
       if(type == 0){

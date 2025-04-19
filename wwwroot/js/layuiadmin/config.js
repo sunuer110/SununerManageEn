@@ -3,14 +3,14 @@
  @Name：layuiAdmin iframe版全局配置
  @Author：贤心
  @Site：http://www.layui.com/admin/
- @License：LPPL（layui付费Products协议）
+ @License：LPPL（layui付费产品协议）
     
  */
  
 layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
   exports('setter', {
     container: 'LAY_app' //容器ID
-    ,base: layui.cache.base //记录Path of static resources
+    ,base: layui.cache.base //记录静态资源所在路径
     ,views: layui.cache.base + 'tpl/' //动态模板所在目录
     ,entry: 'index' //默认视图文件名
     ,engine: '.html' //视图文件后缀名
@@ -20,7 +20,7 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
     ,tableName: 'layuiAdmin' //本地存储表名
     ,MOD_NAME: 'admin' //模块事件名
     
-    ,debug: true //是否开启调试模式。如开启，接口异常时会抛出异常 URL 等信息
+    ,debug: true //是否开启调试模式。如开启，接口异常时会抛出异常 URL 等Information
 
     //自定义请求字段
     ,request: {
@@ -29,13 +29,13 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
     
     //自定义响应字段
     ,response: {
-      statusName: 'code' //数据Status的字段Permission name
+      statusName: 'code' //数据状态的字段名称
       ,statusCode: {
-        ok: 0 //数据Status一切Active的Status码
-        ,logout: 1001 //登录Status失效的Status码
+        ok: 0 //数据状态一切正常的状态码
+        ,logout: 1001 //登录状态失效的状态码
       }
-      ,msgName: 'msg' //Status信息的字段Permission name
-      ,dataName: 'data' //数据Details的字段Permission name
+      ,msgName: 'msg' //状态Information的字段名称
+      ,dataName: 'data' //数据详情的字段名称
     }
     
     //扩展的第三方模块

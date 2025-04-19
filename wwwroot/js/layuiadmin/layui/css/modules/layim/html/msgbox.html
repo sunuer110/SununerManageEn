@@ -28,7 +28,7 @@
 <ul class="layim-msgbox" id="LAY_view"></ul>
 
 <div style="margin: 0 15px;">
-  <blockquote class="layui-elem-quote">注意：这些都是模拟数据，实际使用时，需将其中的Interface改为你的项目真实接口。
+  <blockquote class="layui-elem-quote">注意：这些都是模拟数据，实际使用时，需将其中的模拟接口改为你的项目真实接口。
   <br>该模版文件所在目录（相对于layui.js）：/css/modules/layim/html/msgbox.html</blockquote>
 </div>
 
@@ -88,7 +88,7 @@ layui.use(['layim', 'flow'], function(){
         return layer.msg(res.msg);
       }
 
-      //记录来源User 信息
+      //记录来源用户Information
       layui.each(res.data, function(index, item){
         cache[item.from] = item.user;
       });
@@ -97,12 +97,12 @@ layui.use(['layim', 'flow'], function(){
     });
   };
 
-  //消息信息流
+  //消息Information流
   flow.load({
     elem: '#LAY_view' //流加载容器
     ,isAuto: false
-    ,end: '<li class="layim-msgbox-tips">暂无More新消息</li>'
-    ,done: function(page, next){ //加载Next Page
+    ,end: '<li class="layim-msgbox-tips">暂无更多新消息</li>'
+    ,done: function(page, next){ //加载下一页
       renderMsg(page, function(data, pages){
         var html = laytpl(LAY_tpl.value).render({
           data: data
@@ -120,7 +120,7 @@ layui.use(['layim', 'flow'], function(){
   });
   */
 
-  //Operation
+  //操作
   var active = {
     //同意
     agree: function(othis){
@@ -134,14 +134,14 @@ layui.use(['layim', 'flow'], function(){
         type: 'friend'
         ,username: user.username
         ,avatar: user.avatar
-        ,group: parent.layui.layim.cache().friend //Get好友分组数据
+        ,group: parent.layui.layim.cache().friend //获取好友分组数据
         ,submit: function(group, index){
           
           //将好友追加到主面板
           parent.layui.layim.addList({
             type: 'friend'
             ,avatar: user.avatar //好友头像
-            ,username: user.username //好友Nickname
+            ,username: user.username //好友昵称
             ,groupid: group //所在的分组id
             ,id: uid //好友ID
             ,sign: user.sign //好友签名
@@ -153,7 +153,7 @@ layui.use(['layim', 'flow'], function(){
           //实际部署时，请开启下述注释，并改成你的接口地址
           /*
           $.post('/im/agreeFriend', {
-            uid: uid //对方User ID
+            uid: uid //对方用户ID
             ,from_group: from_group //对方设定的好友分组
             ,group: group //我设定的好友分组
           }, function(res){
@@ -165,7 +165,7 @@ layui.use(['layim', 'flow'], function(){
             parent.layui.layim.addList({
               type: 'friend'
               ,avatar: user.avatar //好友头像
-              ,username: user.username //好友Nickname
+              ,username: user.username //好友昵称
               ,groupid: group //所在的分组id
               ,id: uid //好友ID
               ,sign: user.sign //好友签名
@@ -184,9 +184,9 @@ layui.use(['layim', 'flow'], function(){
       var li = othis.parents('li')
       ,uid = li.data('uid');
 
-      layer.confirm('确定拒绝吗？', function(index){
+      layer.confirm('OK拒绝吗？', function(index){
         $.post('/im/refuseFriend', {
-          uid: uid //对方User ID
+          uid: uid //对方用户ID
         }, function(res){
           if(res.code != 0){
             return layer.msg(res.msg);

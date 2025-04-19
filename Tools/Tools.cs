@@ -250,7 +250,7 @@ namespace Tools
         public static String MD5(string password)
         {
             Byte[] clearBytes = new UnicodeEncoding().GetBytes(password);
-            Byte[] hashedBytes = ((HashAlgorithm)CryptoConfig.CreateFromName("MD5")).ComputeHash(clearBytes);
+            Byte[] hashedBytes = ((HashAlgorithm)CryptoConfig.CreateFromName("MD5")!).ComputeHash(clearBytes);
 
             return BitConverter.ToString(hashedBytes);
         }

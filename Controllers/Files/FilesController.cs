@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SunuerManageEn.Controllers
+namespace SunuerManage.Controllers
 {
 
     /// <summary>
     /// Project:Sunuer Manage
-    /// Description:Upload file API
+    /// Description:上传文件API
     /// Author：HaiDong
     /// Site:https://www.sunuer.com
     /// Version: 1.0
@@ -15,10 +15,10 @@ namespace SunuerManageEn.Controllers
     [Route("api/[controller]")]
     [ApiController]
     public class FilesController : ControllerBase
-    { 
-        // Use dependency injection to get IHttpContextAccessor – Retrieve the actual IP address
+    {
+        // 通过依赖注入获取 IHttpContextAccessor- 获取实际IP地址使用
         private readonly IHttpContextAccessor _httpContextAccessor;
-        //Inject the Getappsettings.json string
+        //注入获取appsettings.json字符串
         private readonly IConfiguration _configuration;
 
         public FilesController(IHttpContextAccessor httpContextAccessor, IConfiguration configuration)
@@ -27,69 +27,79 @@ namespace SunuerManageEn.Controllers
             _configuration = configuration;
         }
         [HttpPost("Upload")]
-        public async Task<IActionResult> Upload(IFormFile file,[FromQuery] string? name)
+        public async Task<IActionResult> Upload(IFormFile file, [FromQuery] string? name)
         {
             if (file == null || file.Length == 0)
             {
                 return BadRequest("No file uploaded or file is empty.");
             }
-            //About Validation
+            //About校验
             if (string.IsNullOrWhiteSpace(name))
             {
                 name = "";
             }
-            // Restrict file types
-            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".pdf", ".docx", ".xlsx" };
+            // 限制文件类型
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".pdf", ".doc", ".xls", ".docx", ".xlsx", ".zip" };
             string fileExtension = Path.GetExtension(file.FileName).ToLower();
-            string[] allowedMimeTypes = { "image/jpeg", "image/png", "image/gif", "application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" };
-
+            string[] allowedMimeTypes = {
+    "image/jpeg",
+    "image/png",
+    "image/gif",
+    "application/pdf",
+    "application/msword", // 对应 .doc
+    "application/vnd.ms-excel", // 对应 .xls
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document", // 对应 .docx
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", // 对应 .xlsx
+    "application/zip" // 如果你要允许 .zip 文件
+    , "application/octet-stream"
+};
             string FileType = "";
             FileType = fileExtension;
-            // Check file extension and MIME type
-            if (!allowedExtensions.Contains(fileExtension) || !allowedMimeTypes.Contains(file.ContentType))
+            // 检查文件扩展名和 MIME 类型
+            if (!allowedExtensions.Contains(fileExtension) || !allowedMimeTypes.Contains(file.ContentType.ToLower()))
             {
                 return Ok(new
                 {
                     Code = "401",
-                    Messge = "Upload failed, format error!",//Invalid file type,
+                    Messge = "上传失败，格式错误！",//Invalid file type,
                     FileUrl = ""
                 });
             }
-            // Ensure the upload file path does not contain ".." to prevent path traversal
+            // 确保上传文件路径不包含 ".." 来防止路径遍历
             if (file.FileName.Contains(".."))
             {
                 return Ok(new
                 {
                     Code = "402",
-                    Messge = "Upload failed, format error!",//Invalid file name
+                    Messge = "上传失败，格式错误！",//Invalid file name
                     FileUrl = ""
                 });
             }
-            // Validate file's Magic Number
-            if (!IsValidFile(file))
+            // 验证文件的 Magic Number
+            if (!await IsValidFile(file, fileExtension))
             {
 
                 return Ok(new
                 {
                     Code = "403",
-                    Messge = "Upload failed, format error!",//Invalid file content.
+                    Messge = "上传失败，格式错误！",//Invalid file content.
                     FileUrl = ""
                 });
             }
 
-            // File size limit(5MB)
+            // 文件大小限制 (5MB)
             const long maxFileSize = 5 * 1024 * 1024; // 5MB
             if (file.Length > maxFileSize)
             {
                 return Ok(new
                 {
                     Code = "404",
-                    Messge = "Upload failed, format error!",//File size exceeds the 5MB limit.
+                    Messge = "上传失败，格式错误！",//File size exceeds the 5MB limit.
                     FileUrl = ""
                 });
             }
 
-            // Save file
+            // 保存文件
             try
             {
                 if (name != "")
@@ -99,7 +109,7 @@ namespace SunuerManageEn.Controllers
 
                     string uniqueFileName = $"{name}{fileExtension}";
                     string filePath = Path.Combine(baseFolder, uniqueFileName);
-                    Console.WriteLine(filePath);
+
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
@@ -109,7 +119,7 @@ namespace SunuerManageEn.Controllers
                     return Ok(new
                     {
                         Code = "0",
-                        Messge = "Upload success",
+                        Messge = "上传成功",
 
                         FileType = FileType,
                         FileUrl = fileUrl,
@@ -138,7 +148,7 @@ namespace SunuerManageEn.Controllers
                     return Ok(new
                     {
                         Code = "0",
-                        Messge = "Upload success",
+                        Messge = "上传成功",
 
                         FileType = FileType,
                         FileUrl = fileUrl,
@@ -151,10 +161,10 @@ namespace SunuerManageEn.Controllers
                 return Ok(new
                 {
                     Code = "500",
-                    Messge = "Upload failed",//An error occurred while uploading the file.
+                    Messge = "上传失败",//An error occurred while uploading the file.
                     FileUrl = ""
                 });
-              
+
             }
         }
         [HttpPost("Uploads")]
@@ -165,73 +175,73 @@ namespace SunuerManageEn.Controllers
                 return BadRequest(new
                 {
                     Code = "405",
-                    Messge = "Upload failed",
+                    Messge = "没有上传文件或文件为空。",
                     FileUrls = new List<string>()
                 });
             }
 
-            // Restrict file types
-            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".pdf", ".docx", ".xlsx"};
+            // 限制文件类型
+            string[] allowedExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".pdf", ".docx", ".xlsx" };
             string[] allowedMimeTypes = { "image/jpeg", "image/png", "image/gif", "application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document" };
-            List<string> fileUrls = new List<string>(); // Used to store all uploaded file URLs
+            List<string> fileUrls = new List<string>(); // 用于存储所有上传文件的 URL
 
             foreach (var file in files)
             {
                 string fileExtension = Path.GetExtension(file.FileName).ToLower();
                 string FileType = "";
                 FileType = file.ContentType;
-                // Check file extension and MIME type
+                // 检查文件扩展名和 MIME 类型
                 if (!allowedExtensions.Contains(fileExtension) || !allowedMimeTypes.Contains(file.ContentType))
                 {
                     return Ok(new
                     {
                         Code = "401",
-                        Messge = "Upload failed, format error!", // Invalid file type
+                        Messge = "上传失败，格式错误！", // Invalid file type
                         FileUrls = fileUrls
                     });
                 }
 
-                // Ensure the upload file path does not contain ".." to prevent path traversal
+                // 确保上传文件路径不包含 ".." 来防止路径遍历
                 if (file.FileName.Contains(".."))
                 {
                     return Ok(new
                     {
                         Code = "402",
-                        Messge = "Upload failed，Filename error", // Invalid file name
+                        Messge = "上传失败，文件名错误！", // Invalid file name
                         FileUrls = fileUrls
                     });
                 }
 
-                // Validate file's Magic Number
-                if (!IsValidFile(file))
+                // 验证文件的 Magic Number
+                if (!await IsValidFile(file, fileExtension))
                 {
                     return Ok(new
                     {
                         Code = "403",
-                        Messge = "Upload failed，File content format error", // Invalid file content
+                        Messge = "上传失败，文件内容格式错误！", // Invalid file content
                         FileUrls = fileUrls
                     });
                 }
 
-                // File size limit(5MB)
+                // 文件大小限制 (5MB)
                 const long maxFileSize = 5 * 1024 * 1024; // 5MB
                 if (file.Length > maxFileSize)
                 {
                     return Ok(new
                     {
                         Code = "404",
-                        Messge = "Upload failed，File exceeds size limit", // File size exceeds the 5MB limit.
+                        Messge = "上传失败，文件超出大小限制！", // File size exceeds the 5MB limit.
                         FileUrls = fileUrls
                     });
                 }
 
-                // Save file
+                // 保存文件
                 try
                 {
                     string baseFolder = Path.Combine(Directory.GetCurrentDirectory(), "Uploadfile");
                     string yearMonthFolder = Path.Combine(baseFolder, DateTime.Now.ToString("yyyy/MM").Replace("/", Path.DirectorySeparatorChar.ToString()));
 
-                    // Create the folder if it does not exist
+                    // 如果文件夹不存在则创建
                     if (!Directory.Exists(yearMonthFolder))
                     {
                         Directory.CreateDirectory(yearMonthFolder);
@@ -240,69 +250,64 @@ namespace SunuerManageEn.Controllers
                     string uniqueFileName = $"{Guid.NewGuid()}{fileExtension}";
                     string filePath = Path.Combine(yearMonthFolder, uniqueFileName);
 
-                    // Save file
+                    // 保存文件
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
                         await file.CopyToAsync(stream);
                     }
 
-                    // Public URL of the file
+                    // 文件的公开 URL
                     string fileUrl = $"{Request.Scheme}://{Request.Host}/Uploadfile/{DateTime.Now:yyyy}/{DateTime.Now:MM}/{uniqueFileName}";
-                    fileUrls.Add(fileUrl); // Add to the file URL list
+                    fileUrls.Add(fileUrl); // 添加到文件 URL 列表
                 }
                 catch (Exception ex)
                 {
-                    return StatusCode(500, new { Message = "Error occurred during file upload", Error = ex.Message });
+                    return StatusCode(500, new { Message = "上传文件时发生错误", Error = ex.Message });
                 }
             }
 
-            //  Return all uploaded file URLs
+            // 返回所有上传的文件 URL
             return Ok(new
             {
                 Code = "200",
-                Messge = "File upload success",
+                Messge = "文件上传成功",
                 FileUrls = fileUrls
             });
         }
 
 
-        //File type security check
-        public bool IsValidFile(IFormFile file)
+        //文件类型安全判断
+        private async Task<bool> IsValidFile(IFormFile file, string extension)
         {
             try
             {
-                byte[] buffer = new byte[4];  // Read the first 4 bytes（Magic Number）
+                byte[] buffer = new byte[8]; // 读前8字节
                 using (var stream = file.OpenReadStream())
                 {
-                    // Read the first 4 bytes of the file
-                    stream.Read(buffer, 0, buffer.Length);
+                    await stream.ReadAsync(buffer, 0, buffer.Length);
                 }
 
-                string hex = BitConverter.ToString(buffer).Replace("-", string.Empty);
-                Console.WriteLine(hex);
-                // Validate the file type Magic Number
-                if (hex.StartsWith("FFD8FF")) return true; // JPEG
-                if (hex.StartsWith("89504E47")) return true; // PNG
-                if (hex.StartsWith("47494638")) return true; // GIF
-                if (hex.StartsWith("25504446") && file.FileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase)) return true; // PDF
-                if (file.FileName.EndsWith(".docx", StringComparison.OrdinalIgnoreCase) || file.FileName.EndsWith(".xlsx", StringComparison.OrdinalIgnoreCase))
-                {
-                    // DOCX and XLSX files are in ZIP format; check if the file starts with "PK"
-                    byte[] zipBuffer = new byte[2];
-                    using (var stream = file.OpenReadStream())
-                    {
-                        stream.Read(zipBuffer, 0, zipBuffer.Length);
-                    }
-                    string zipHex = BitConverter.ToString(zipBuffer).Replace("-", string.Empty);
-                    if (zipHex.StartsWith("504B")) return true; // ZIP (DOCX, XLSX)
-                }
-
-                return false; // Does not match a known format
+                // 根据扩展名检查文件头（magic bytes）
+                if (extension == ".jpg" || extension == ".jpeg")
+                    return buffer[0] == 0xFF && buffer[1] == 0xD8;
+                if (extension == ".png")
+                    return buffer[0] == 0x89 && buffer[1] == 0x50 && buffer[2] == 0x4E && buffer[3] == 0x47;
+                if (extension == ".gif")
+                    return buffer[0] == 0x47 && buffer[1] == 0x49 && buffer[2] == 0x46;
+                if (extension == ".pdf")
+                    return buffer[0] == 0x25 && buffer[1] == 0x50 && buffer[2] == 0x44 && buffer[3] == 0x46;
+                if (extension == ".zip" || extension == ".docx" || extension == ".xlsx")
+                    return buffer[0] == 0x50 && buffer[1] == 0x4B; // zip头
+                if (extension == ".doc" || extension == ".xls")
+                    return buffer[0] == 0xD0 && buffer[1] == 0xCF && buffer[2] == 0x11 && buffer[3] == 0xE0; // 旧版Office格式头
             }
-            catch (Exception)
+            catch
             {
-                return false; // If reading fails, the file is invalid
+                return false; // 出错也判失败
             }
+
+            // 其他文件默认通过
+            return true;
         }
 
 

@@ -50,12 +50,12 @@ layui.define(['layer-mobile', 'zepto'] , function(exports){
       item = $(item);
       var form = '<form target="'+ elemIframe +'" method="'+ (options.method||'post') +'" key="set-mine" enctype="multipart/form-data" action="'+ (options.url||'') +'"></form>';
       
-      var type = item.attr('lay-type') || options.type; //Get文件类型
+      var type = item.attr('lay-type') || options.type; //获取文件类型
 
       //包裹ui元素
       if(!options.unwrap){
         form = '<div class="layui-box layui-upload-button">' + form + '<span class="layui-upload-icon"><i class="layui-icon">&#xe608;</i>'+ (
-          item.attr('lay-title') || options.title|| ('上传'+ (fileType[type]||'Images') )
+          item.attr('lay-title') || options.title|| ('上传'+ (fileType[type]||'图片') )
         ) +'</span></div>';
       }
       
@@ -96,13 +96,13 @@ layui.define(['layer-mobile', 'zepto'] , function(exports){
   //提交上传
   Upload.prototype.action = function(input, type){
     var that = this, options = that.options, val = input.value;
-    var item = $(input), ext = item.attr('lay-ext') || options.ext || ''; //Get支持上传的文件扩展名;
+    var item = $(input), ext = item.attr('lay-ext') || options.ext || ''; //获取支持上传的文件扩展名;
 
     if(!val){
       return;
     };
     
-    // Validation文件
+    //校验文件
     switch(type){
       case 'file': //一般文件
         if(ext && !RegExp('\\w\\.('+ ext +')$', 'i').test(escape(val))){
@@ -122,9 +122,9 @@ layui.define(['layer-mobile', 'zepto'] , function(exports){
           return input.value = '';
         }
       break;
-      default: //Images文件
+      default: //图片文件
         if(!RegExp('\\w\\.('+ (ext||'jpg|png|gif|bmp|jpeg') +')$', 'i').test(escape(val))){
-          layer.msg('不支持该Images格式', msgConf);
+          layer.msg('不支持该图片格式', msgConf);
           return input.value = '';
         }
       break;
@@ -148,7 +148,7 @@ layui.define(['layer-mobile', 'zepto'] , function(exports){
           res = JSON.parse(res);
         } catch(e){
           res = {};
-          return layer.msg('请对上传接口 Return JSON字符', msgConf);
+          return layer.msg('请对上传接口返回JSON字符', msgConf);
         }
         typeof options.success === 'function' && options.success(res, input);
       }

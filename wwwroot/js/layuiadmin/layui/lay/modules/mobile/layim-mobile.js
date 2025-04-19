@@ -117,7 +117,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     return popPanel(options);
   };
 
-  //Get所有缓存数据
+  //获取所有缓存数据
   LAYIM.prototype.cache = function(){
     return cache;
   };
@@ -127,23 +127,23 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     return getMessage(data), this;
   };
   
-  //Add 好友/群
+  //添加好友/群
   LAYIM.prototype.addList = function(data){
     return addList(data), this;
   };
   
-  //Delete好友/群
+  //删除好友/群
   LAYIM.prototype.removeList = function(data){
     return removeList(data), this;
   };
   
-  //设置好友在线/离线Status
+  //设置好友在线/离线状态
   LAYIM.prototype.setFriendStatus = function(id, type){
     var list = $('.layim-friend'+ id);
     list[type === 'online' ? 'removeClass' : 'addClass']('layim-list-gray');
   };
   
-  //设置当前会话Status
+  //设置当前会话状态
   LAYIM.prototype.setChatStatus = function(str){
     var thatChat = thisChat(), status = thatChat.elem.find('.layim-chat-status');
     return status.html(str), this;
@@ -154,12 +154,12 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     showNew(alias, show);
   };
   
-  //解析聊天Content
+  //解析聊天内容
   LAYIM.prototype.content = function(content){
     return layui.data.content(content);
   };
   
-  // ListContent模板
+  //列表内容模板
   var listTpl = function(options){
     var nodata = {
       friend: "该分组下暂无好友"
@@ -169,7 +169,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
 
     options = options || {};
     
-    //如果是历史记录，则读取Sort Order好的数据
+    //如果是历史记录，则读取排序好的数据
     if(options.type === 'history'){
       options.item = options.item || 'd.sortHistory';
     }
@@ -177,7 +177,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     return ['{{# var length = 0; layui.each('+ options.item +', function(i, data){ length++; }}'
       ,'<li layim-event="chat" data-type="'+ options.type +'" data-index="'+ (options.index ? '{{'+ options.index +'}}' : (options.type === 'history' ? '{{data.type}}' : options.type) +'{{data.id}}') +'" class="layim-'+ (options.type === 'history' ? '{{data.type}}' : options.type) +'{{data.id}} {{ data.status === "offline" ? "layim-list-gray" : "" }}"><div><img src="{{data.avatar}}"></div><span>{{ data.username||data.groupname||data.name||"佚名" }}</span><p>{{ data.remark||data.sign||"" }}</p><span class="layim-msg-status">new</span></li>'
     ,'{{# }); if(length === 0){ }}'
-      ,'<li class="layim-null">'+ (nodata[options.type] || "暂No data") +'</li>'
+      ,'<li class="layim-null">'+ (nodata[options.type] || "暂无数据") +'</li>'
     ,'{{# } }}'].join('');
   };
   
@@ -254,7 +254,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
   ,'<ul class="layui-unselect layui-layim-tab">'
     ,'<li title="消息" layim-event="tab" lay-type="message" class="layim-this"><i class="layui-icon">&#xe611;</i><span>消息</span><i class="layim-new" id="LAY_layimNewMsg"></i></li>'
     ,'<li title="联系人" layim-event="tab" lay-type="friend"><i class="layui-icon">&#xe612;</i><span>联系人</span><i class="layim-new" id="LAY_layimNewList"></i></li>'
-    ,'<li title="More" layim-event="tab" lay-type="more"><i class="layui-icon">&#xe670;</i><span>More</span><i class="layim-new" id="LAY_layimNewMore"></i></li>'
+    ,'<li title="更多" layim-event="tab" lay-type="more"><i class="layui-icon">&#xe670;</i><span>更多</span><i class="layim-new" id="LAY_layimNewMore"></i></li>'
   ,'</ul>'].join('');
   
   //聊天主模板
@@ -267,7 +267,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       ,'<div class="layim-chat-tool" data-json="{{encodeURIComponent(JSON.stringify(d.data))}}">'
         ,'<span class="layui-icon layim-tool-face" title="选择表情" layim-event="face">&#xe60c;</span>'
         ,'{{# if(d.base && d.base.uploadImage){ }}'
-        ,'<span class="layui-icon layim-tool-image" title="上传Images" layim-event="image">&#xe60d;<input type="file" name="file" accept="image/*"></span>'
+        ,'<span class="layui-icon layim-tool-image" title="上传图片" layim-event="image">&#xe60d;<input type="file" name="file" accept="image/*"></span>'
         ,'{{# }; }}'
         ,'{{# if(d.base && d.base.uploadFile){ }}'
         ,'<span class="layui-icon layim-tool-image" title="发送文件" layim-event="image" data-type="file">&#xe61d;<input type="file" name="file"></span>'
@@ -291,7 +291,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     + ' ' + digit(d.getHours()) + ':' + digit(d.getMinutes());
   };
   
-  //转换Content
+  //转换内容
   layui.data.content = function(content){
     //支持的html标签
     var html = function(end){
@@ -305,7 +305,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       var alt = face.replace(/^face/g, '');
       return '<img alt="'+ alt +'" title="'+ alt +'" src="' + faces[alt] + '">';
     })
-    .replace(/img\[([^\s]+?)\]/g, function(img){  //转义Images
+    .replace(/img\[([^\s]+?)\]/g, function(img){  //转义图片
       return '<img class="layui-layim-photos" src="' + img.replace(/(^img\[)|(\]$)/g, '') + '">';
     })
     .replace(/file\([\s\S]+?\)\[[\s\S]*?\]/g, function(str){ //转义文件
@@ -338,7 +338,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     ,'<div class="layim-chat-text">{{ layui.data.content(d.content||"&nbsp;") }}</div>'
   ,'</li>'].join('');
   
-  //处理初始化信息
+  //处理初始化Information
   var cache = {message: {}, chat: []}, init = function(options){
     var init = options.init || {}
      mine = init.mine || {}
@@ -351,12 +351,12 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     }, create = function(data){
       var mine = data.mine || {};
       var local = layui.data('layim-mobile')[mine.id] || {}, obj = {
-        base: options //基础配置信息
+        base: options //基础配置Information
         ,local: local //本地数据
-        ,mine:  mine //我的User 信息
-        ,friend: data.friend || [] //联系人信息
-        ,group: data.group || [] //群组信息
-        ,history: local.history || [] //历史会话信息
+        ,mine:  mine //我的用户Information
+        ,friend: data.friend || [] //联系人Information
+        ,group: data.group || [] //群组Information
+        ,history: local.history || [] //历史会话Information
       };
       obj.sortHistory = sort(obj.history, 'historyTime');
       cache = $.extend(cache, obj);
@@ -374,7 +374,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     create(init)
   };
 
-  //Show好友 List面板
+  //显示好友列表面板
   var layimMain, popim = function(content){
     return layer.open({
      type: 1
@@ -415,12 +415,12 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     });
   }
   
-  //Show聊天面板
+  //显示聊天面板
   var layimChat, layimMin, To = {}, popchat = function(data, anim, back){
     data = data || {};
 
     if(!data.id){
-      return layer.msg('非法User ');
+      return layer.msg('非法用户');
     }
     
     layer.close(popchat.index);
@@ -447,7 +447,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
         
         fixIosScroll(chatMain);
         
-        //输入框Get焦点
+        //输入框获取焦点
         thatChat.textarea.on('focus', function(){
           setTimeout(function(){
             chatMain.scrollTop(chatMain[0].scrollHeight + 1000);
@@ -479,7 +479,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     }
   };
   
-  //同步置灰Status
+  //同步置灰状态
   var syncGray = function(data){
     $('.layim-'+data.type+data.id).each(function(){
       if($(this).hasClass('layim-list-gray')){
@@ -488,7 +488,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     });
   };
   
-  //Get当前聊天面板
+  //获取当前聊天面板
   var thisChat = function(){
     if(!layimChat) return {};
     var cont = layimChat.find('.layim-chat');
@@ -500,7 +500,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     };
   };
   
-  //将对象按子对象的某个keySort Order
+  //将对象按子对象的某个key排序
   var sort = function(data, key, asc){
     var arr = []
     ,compare = function (obj1, obj2) { 
@@ -571,7 +571,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     showNew('Msg');
   };
   
-  //标注底部Navigation新动态徽章
+  //标注底部导航新动态徽章
   var showNew = function(alias, show){
     if(!show){
       var show;
@@ -600,7 +600,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     if(data.content === '') return;
 
     if(data.content.length > maxLength){
-      return layer.msg('Content最长不能超过'+ maxLength +'个字符')
+      return layer.msg('内容最长不能超过'+ maxLength +'个字符')
     }
     
     if(time - (sendMessage.time||0) > 60*1000){
@@ -754,7 +754,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     chatListMore();
   };
   
-  //Add 好友或群
+  //添加好友或群
   var addList = function(data){
     var obj = {}, has, listElem = layimMain.find('.layim-list-'+ data.type);
     
@@ -762,13 +762,13 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       if(data.type === 'friend'){
         layui.each(cache.friend, function(index, item){
           if(data.groupid == item.id){
-            //检查好友是否已经在 List中
+            //检查好友是否已经在列表中
             layui.each(cache.friend[index].list, function(idx, itm){
               if(itm.id == data.id){
                 return has = true
               }
             });
-            if(has) return layer.msg('好友 ['+ (data.username||'') +'] 已经存在 List中',{anim: 6});
+            if(has) return layer.msg('好友 ['+ (data.username||'') +'] 已经存在列表中',{anim: 6});
             cache.friend[index].list = cache.friend[index].list || [];
             obj[cache.friend[index].list.length] = data;
             data.groupIndex = index;
@@ -777,7 +777,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
           }
         });
       } else if(data.type === 'group'){
-        //检查群组是否已经在 List中
+        //检查群组是否已经在列表中
         layui.each(cache.group, function(idx, itm){
           if(itm.id == data.id){
             return has = true
@@ -800,7 +800,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     if(data.type === 'friend'){
       var li = listElem.children('li').eq(data.groupIndex);
       li.find('.layui-layim-list').append(list);
-      li.find('.layim-count').html(cache.friend[data.groupIndex].list.length); //Refresh好友数量
+      li.find('.layim-count').html(cache.friend[data.groupIndex].list.length); //刷新好友数量
       //如果初始没有好友
       if(li.find('.layim-null')[0]){
         li.find('.layim-null').remove();
@@ -826,8 +826,8 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
               var li = listElem.children('li').eq(index1);
               var list = li.find('.layui-layim-list').children('li');
               li.find('.layui-layim-list').children('li').eq(index).remove();
-              cache.friend[index1].list.splice(index, 1); //从cache的friend里面也Delete掉好友
-              li.find('.layim-count').html(cache.friend[index1].list.length); //Refresh好友数量  
+              cache.friend[index1].list.splice(index, 1); //从cache的friend里面也删除掉好友
+              li.find('.layim-count').html(cache.friend[index1].list.length); //刷新好友数量  
               //如果一个好友都没了
               if(cache.friend[index1].list.length === 0){
                 li.find('.layui-layim-list').html('<li class="layim-null">该分组下已无好友了</li>');
@@ -840,7 +840,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
         layui.each(cache.group, function(index, item){
           if(data.id == item.id){
             listElem.children('li').eq(index).remove();
-            cache.group.splice(index, 1); //从cache的group里面也Delete掉数据
+            cache.group.splice(index, 1); //从cache的group里面也删除掉数据
             //如果一个群组都没了
             if(cache.group.length === 0){
               listElem.html('<li class="layim-null">暂无群组</li>');
@@ -852,7 +852,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     }
   };
   
-  //ViewMore记录
+  //查看更多记录
   var chatListMore = function(){
     var thatChat = thisChat(), chatMain = thatChat.elem.find('.layim-chat-main');
     var ul = chatMain.find('ul'), li = ul.children('.layim-chat-li'); 
@@ -861,7 +861,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       var first = li.eq(0);
       first.prev().remove();
       if(!ul.prev().hasClass('layim-chat-system')){
-        ul.before('<div class="layim-chat-system"><span layim-event="chatLog">ViewMore记录</span></div>');
+        ul.before('<div class="layim-chat-system"><span layim-event="chatLog">查看更多记录</span></div>');
       }
       first.remove();
     }
@@ -894,7 +894,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
   
   var stope = layui.stope; //组件事件冒泡
   
-  //在焦点处插入Content
+  //在焦点处插入内容
   var focusInsert = function(obj, str, nofocus){
     var result, val = obj.value;
     nofocus || obj.focus();
@@ -946,14 +946,14 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       othis.find('.layui-icon').html(spread === 'true' ? '&#xe61a;' : '&#xe602;');
     }
     
-    //底部Navigation切换
+    //底部导航切换
     ,tab: function(othis){
       var index = othis.index(), main = '.layim-tab-content';
       othis.addClass(THIS).siblings().removeClass(THIS);
       layimMain.find(main).eq(index).addClass(SHOW).siblings(main).removeClass(SHOW);
     }
     
-    // Return 到上一个面板
+    //返回到上一个面板
     ,back: function(othis){
       var layero = othis.parents('.layui-m-layer').eq(0)
       ,index = layero.attr('index')
@@ -970,7 +970,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       });
     }
     
-    //发送聊天Content
+    //发送聊天内容
     ,send: function(){
       sendMessage();
     }
@@ -1006,7 +1006,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       .off('click', events.faceHide);
     }
     
-    //Images或一般文件
+    //图片或一般文件
     ,image: function(othis){
       var type = othis.data('type') || 'images', api = {
         images: 'uploadImage'
@@ -1029,7 +1029,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
             }
             sendMessage();
           } else {
-            layer.msg(res.msg||'Upload failed');
+            layer.msg(res.msg||'上传失败');
           }
         }
       });
@@ -1068,7 +1068,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       });
     }
     
-    //View群组成员
+    //查看群组成员
     ,detail: function(){
       var thatChat = thisChat();
       layui.each(call.detail, function(index, item){
@@ -1136,7 +1136,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
       });
     }
     
-    //More List
+    //更多列表
     ,moreList: function(othis){
       var filter = othis.attr('lay-filter');
       layui.each(call.moreList, function(index, item){
@@ -1149,7 +1149,7 @@ layui.define(['laytpl', 'upload-mobile', 'layer-mobile', 'zepto'], function(expo
     //关于
     ,about: function(){
       layer.open({
-        content: '<p style="padding-bottom: 5px;">LayIM属于付费Products，欢迎 Approved官网获得授权，促进良性发展！</p><p>当前版本：layim mobile v'+ v + '</p><p>版权所有：<a href="http://layim.layui.com" target="_blank">layim.layui.com</a></p>'
+        content: '<p style="padding-bottom: 5px;">LayIM属于付费产品，欢迎通过官网获得授权，促进良性发展！</p><p>当前版本：layim mobile v'+ v + '</p><p>版权所有：<a href="http://layim.layui.com" target="_blank">layim.layui.com</a></p>'
         ,className: 'layim-about'
         ,shadeClose: false
         ,btn: '我知道了'
