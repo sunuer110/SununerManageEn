@@ -3,6 +3,18 @@
   "WorkspaceRootPath": "D:\\sites\\NET8\\SunuerManageEn\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\controllers\\files\\filescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:controllers\\files\\filescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\pages\\manage\\articless\\articlesedt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:pages\\manage\\articless\\articlesedt.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\pages\\manage\\articless\\articlesadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:pages\\manage\\articless\\articlesadd.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|d:\\sites\\net8\\sunuermanageen\\wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{1224324E-D120-47DA-81D4-5DEC4ECEBE04}|SunuerManageEn.csproj|solutionrelative:wwwroot\\css\\login.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -34,11 +46,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ArticlesEdt.cshtml",
+              "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Articless\\ArticlesEdt.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Manage\\Articless\\ArticlesEdt.cshtml",
+              "ToolTip": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Articless\\ArticlesEdt.cshtml",
+              "RelativeToolTip": "Pages\\Manage\\Articless\\ArticlesEdt.cshtml",
+              "ViewState": "AgIAAP4BAAAAAAAAAADwvxACAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T13:35:40.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ArticlesAdd.cshtml",
+              "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Articless\\ArticlesAdd.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Manage\\Articless\\ArticlesAdd.cshtml",
+              "ToolTip": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Articless\\ArticlesAdd.cshtml",
+              "RelativeToolTip": "Pages\\Manage\\Articless\\ArticlesAdd.cshtml",
+              "ViewState": "AgIAALkBAAAAAAAAAADwv8MBAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T13:34:49.842Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "FilesController.cs",
+              "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Controllers\\Files\\FilesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Files\\FilesController.cs",
+              "ToolTip": "D:\\sites\\NET8\\SunuerManageEn\\Controllers\\Files\\FilesController.cs",
+              "RelativeToolTip": "Controllers\\Files\\FilesController.cs",
+              "ViewState": "AgIAAD0BAAAAAAAAAAAIwFsBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T13:34:22.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "login.css",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\wwwroot\\css\\login.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\login.css",
@@ -46,12 +95,11 @@
               "RelativeToolTip": "wwwroot\\css\\login.css",
               "ViewState": "AgIAAAwAAAAAAAAAAADwvyUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-04-11T07:11:53.817Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-11T07:11:53.817Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "LeaveMessageList.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml",
@@ -59,12 +107,11 @@
               "RelativeToolTip": "Pages\\Manage\\LeaveMessages\\LeaveMessageList.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-28T08:56:12.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-28T08:56:12.842Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "ArticlesList.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Articless\\ArticlesList.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\Articless\\ArticlesList.cshtml",
@@ -76,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "AdminList.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\Admins\\AdminList.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\Admins\\AdminList.cshtml",
@@ -88,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "admin_index.cshtml",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\Pages\\Manage\\admin_index.cshtml",
               "RelativeDocumentMoniker": "Pages\\Manage\\admin_index.cshtml",
@@ -100,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "style.css",
               "DocumentMoniker": "D:\\sites\\NET8\\SunuerManageEn\\wwwroot\\css\\style.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\style.css",
