@@ -144,6 +144,16 @@ namespace Tools
             const string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             return Regex.IsMatch(str, pattern);
         }
+
+        /// <summary>
+        /// Get the user's IP address
+        /// Prioritize obtaining the external IP address; if unavailable, obtain the internal IP address
+        /// </summary>
+        /// <returns>User's IP address</returns>
+        public static string GetIP()
+        {
+            return HttpContextHelper.GetUserIp();
+        }
         /// <summary>
         /// Get the user's IP address
         /// Prioritize obtaining the external IP address; if unavailable, obtain the internal IP address

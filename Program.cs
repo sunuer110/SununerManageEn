@@ -47,8 +47,13 @@ namespace SunuerManage
                 options.Cookie.HttpOnly = true; // Allow cookies to be accessed only via HTTP, preventing client-side scripts from accessing them
                 options.Cookie.IsEssential = true; // Ensure cookies are required under privacy policy
             });
+            //Register HttpContext
+            builder.Services.AddHttpContextAccessor();
             var app = builder.Build();
 
+            // ≥ı ºªØ HttpContextHelper
+            var httpContextAccessor = app.Services.GetRequiredService<IHttpContextAccessor>();
+            HttpContextHelper.Configure(httpContextAccessor);
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
